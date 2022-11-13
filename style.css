@@ -1,0 +1,144 @@
+/* ! ===== Font Start ===== */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+/* ! ===== Font End ===== */
+
+/* ! ===== Reset Start ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  scroll-padding: 2rem;
+}
+/* ! ===== Reset End ===== */
+
+/* ! ===== Root Start ===== */
+:root {
+  --main-color: #fd4646;
+  --sec-color: #4946fd;
+  --text-color: #171427;
+  --bg-color: #fff;
+}
+::selection {
+  color: var(--text-color);
+  background-color: var(--main-color);
+}
+
+.container {
+  max-width: 1068px;
+  margin: auto;
+  width: 100%;
+}
+
+section {
+  padding: 4rem 0 3rem;
+}
+
+body {
+  color: var(--text-color);
+}
+
+img {
+  width: 100%;
+}
+/* ! ===== Root End ===== */
+
+/* ! ===== Header Start ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--sec-color);
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+#cart-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+/* ! ===== Header End ===== */
+
+/* ! ===== Shop Section Start ===== */
+.shop {
+  margin-top: 2rem;
+}
+
+.section-title {
+  font-style: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.shop-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+  gap: 1.5rem;
+}
+
+.product-box {
+  position: relative;
+}
+
+.product-box:hover {
+  padding: 10px;
+  border: 1px solid var(--text-color);
+  transition: 0.4s;
+}
+
+.product-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  font-weight: 500;
+}
+
+.add-cart {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.add-cart:hover {
+  background-color: hsl(249, 32%, 17%);
+}
+/* ! ===== Shop Section End ===== */
