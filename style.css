@@ -87,7 +87,7 @@ header {
   position: fixed;
   top: 0;
   right: 0;
-  /* right: -100%; */
+  right: -100%;
   width: 360px;
   height: 100vh;
   overflow-y: auto;
@@ -145,7 +145,7 @@ header {
   outline-color: var(--main-color);
   width: 2.4rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .cart-remove {
@@ -228,10 +228,11 @@ header {
   aspect-ratio: 1/1;
   object-fit: cover;
   margin-bottom: 0.5rem;
+  border-radius: 15px;
 }
 
 .product-title {
-  font-size: 1.1rem;
+  font-size: 1.04rem;
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -252,6 +253,57 @@ header {
 }
 
 .add-cart:hover {
-  background-color: hsl(249, 32%, 17%);
+  background-color: hsl(249, 30%, 30%);
 }
 /* ! ===== Shop Section End ===== */
+
+/* ! ===== Responsive & Breakpoints Start ===== */
+@media (max-width: 1080px) {
+  .nav {
+    padding: 15px;
+  }
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  section {
+    padding: 3rem 0 2rem;
+  }
+  .shop {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav {
+    padding: 11px;
+  }
+  .logo {
+    font-size: 1rem;
+  }
+  .cart {
+    width: 320px;
+  }
+}
+
+@media (max-width: 360px) {
+  .shop {
+    margin-top: 1rem;
+  }
+  .cart {
+    width: 280px;
+  }
+}
+/* ! ===== Responsive & Breakpoints End ===== */
+
+.badge {
+  padding: 0 5px;
+  color: var(--main-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  position: relative;
+  top: -35px;
+  right: -20px;
+  width: 0.7rem;
+}
