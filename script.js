@@ -117,7 +117,7 @@ function handle_changeItemQuantity() {
 
 function handle_buyOrder() {
   if (itemsAdded.length <= 0) {
-    alert("There is No Order to Place Yet! \n Please Make an Order first.");
+    alert("There is No Order to Place Yet! \nPlease Make an Order first.");
     return;
   }
   const cartContent = cart.querySelector(".cart-content");
@@ -149,13 +149,44 @@ function updateTotal() {
 function CartBoxComponent(title, price, imgSrc) {
   return `
   <div class="cart-box">
-    <img src=${imgSrc} alt="" class="cart-img" />
-    <div class="detail-box">
-      <div class="cart-product-title">${title}</div>
-      <div class="cart-price">${price}</div>
-      <input type="number" value="1" class="cart-quantity" />
-    </div>
-    <!-- ===== Remove Cart ===== -->
-    <i class="bx bxs-trash-alt cart-remove"></i>
+  <img src=${imgSrc} alt="" class="cart-img" />
+  <div class="detail-box">
+  <div class="cart-product-title">${title}</div>
+  <div class="cart-price">${price}</div>
+  <input type="number" value="1" class="cart-quantity" />
+  </div>
+  <!-- ===== Remove Cart ===== -->
+  <i class="bx bxs-trash-alt cart-remove"></i>
   </div>`;
 }
+
+// ! ===== Shop Search Filter Start =====
+
+const search = () => {
+  const searchBox = document.getElementById("search-item").value.toUpperCase();
+  const storeItems = document.getElementById("product-list");
+  const product = document.querySelectorAll(".product-box");
+  const productName = storeItems.getElementsByTagName("h2");
+
+  for (let i = 0; i < productName.length; i++) {
+    let match = product[i].getElementsByTagName("h2")[0];
+
+    if (match) {
+      let textValue = match.textContent || match.innerHTML;
+
+      if (textValue.toUpperCase().indexOf(searchBox) > -1) {
+        product[i].style.display = "";
+      } else {
+        product[i].style.display = "none";
+      }
+    }
+  }
+};
+
+// ! ===== Shop Search Filter End =====
+
+// ! ===== Copyright Date Start =====
+document.getElementById("copyright-date").innerHTML = new Date().getFullYear();
+// ! ===== Copyright Date End =====
+
+

@@ -21,6 +21,7 @@
   --sec-color: #4946fd;
   --text-color: #171427;
   --bg-color: #fff;
+  --dark-color: #000;
 }
 ::selection {
   color: var(--text-color);
@@ -35,6 +36,7 @@
 
 section {
   padding: 4rem 0 3rem;
+  height: 100%;
 }
 
 body {
@@ -69,6 +71,7 @@ header {
   font-weight: 600;
   color: var(--sec-color);
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .logo span {
@@ -164,10 +167,11 @@ header {
 .total-title {
   font-size: 1rem;
   font-weight: 600;
+  margin-top: 0.7rem;
 }
 
 .total-price {
-  margin-left: 0.5rem;
+  margin: 0.7rem 0 0 0.7rem;
 }
 
 .btn-buy {
@@ -296,7 +300,143 @@ header {
 }
 /* ! ===== Responsive & Breakpoints End ===== */
 
-.badge {
+/* ! ===== Product Search Filter Start ===== */
+form {
+  padding-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  right: 10px;
+}
+
+form input {
+  border: 1px solid var(--text-color);
+  border-radius: 15px;
+  outline: none;
+  box-shadow: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 28px;
+}
+
+form i {
+  position: relative;
+  left: 25px;
+  font-size: 18px;
+}
+
+input::placeholder {
+  opacity: 0.5;
+}
+/* ! ===== Product Search Filter End ===== */
+
+/* ! ===== Footer Start ===== */
+
+footer {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  height: auto;
+  width: fit-content;
+}
+
+.footer-widget {
+  /* background-color: var(--sec-color); */
+  padding: 5px;
+  margin: 30px 5px 0 5px;
+  text-align: justify;
+}
+
+.widget-title {
+  color: var(--bg-color);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.about-widget p {
+  line-height: 20px;
+  margin: 10px 0 30px 0;
+}
+
+.cards i {
+  display: inline-block;
+  font-size: 30px;
+  margin-right: 12px;
+}
+
+.about-widget p span {
+  margin-right: 10px;
+}
+
+.categories-widget,
+.information-widget {
+  margin-left: 50px;
+}
+
+.footer-widget ul {
+  margin-left: 20px;
+}
+
+.footer-widget ul li {
+  padding-bottom: 14px;
+  list-style-type: square;
+}
+
+.footer-widget ul li a {
+  color: var(--bg-color);
+  text-decoration: none;
+}
+
+.footer-widget ul li a:hover {
+  color: var(--main-color);
+  margin-left: 4px;
+  transition: all 0.5s ease;
+}
+
+.contact-address {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--sec-color);
+  line-height: 20px;
+  width: 75%;
+}
+
+.contact-number,
+.contact-email {
+  margin: 10px 0;
+}
+
+.contact-address i .contact-number i,
+.contact-email i {
+  margin-right: 10px;
+}
+
+.social-widget a {
+  display: inline-block;
+  font-size: 20px;
+  color: var(--bg-color);
+  margin-right: 10px;
+}
+
+.social-widget a:hover {
+  color: var(--main-color);
+  transition: all 0.5s ease;
+}
+
+.copyright {
+  background-color: var(--dark-color);
+  padding: 15px;
+}
+
+.copyright p {
+  color: var(--bg-color);
+  text-align: center;
+}
+
+/* ! ===== Footer End ===== */
+
+/* ! ===== Cart Badge Counter Start ===== */
+/* .badge {
   padding: 0 5px;
   color: var(--main-color);
   font-size: 1.2rem;
@@ -306,4 +446,5 @@ header {
   top: -35px;
   right: -20px;
   width: 0.7rem;
-}
+} */
+/* ! ===== Cart Badge Counter End ===== */
