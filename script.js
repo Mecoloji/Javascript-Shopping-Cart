@@ -185,6 +185,42 @@ const search = () => {
 
 // ! ===== Shop Search Filter End =====
 
+// ! ===== Sign Up / Login Start =====
+
+// ? ===== Password Show / Hide Function Start =====
+
+const passwordInput = document.getElementById("password");
+const passwordBtn = document.querySelector(".password-eye");
+
+passwordBtn.addEventListener("click", () => {
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    passwordBtn.classList.add("hide-btn");
+  } else {
+    passwordInput.type = "password";
+    passwordBtn.classList.remove("hide-btn");
+  }
+});
+
+// ? ===== Password Show / Hide Function End =====
+
+// ? ===== Popup Function Start =====
+
+document.querySelector("#show-login").addEventListener("click", function () {
+  document.querySelector(".main").classList.add("active");
+  document.querySelector("body").classList.add("blur")
+});
+
+document
+  .querySelector(".main .exit-btn")
+  .addEventListener("click", function () {
+    document.querySelector(".main").classList.remove("active");
+  });
+
+// ? ===== Popup Function End =====
+
+// ! ===== Sign Up / Login End =====
+
 // ! ===== Copyright Date Start =====
 document.getElementById("copyright-date").innerHTML = new Date().getFullYear();
 // ! ===== Copyright Date End =====

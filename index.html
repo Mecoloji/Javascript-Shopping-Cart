@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ecommerce Shopping Cart</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- ===== Bootstrap ===== -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,13 +24,24 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <!-- ===== Font-Awesome ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
   </head>
   <body>
     <!-- ===== Header ===== -->
     <header>
       <!-- Nav -->
-      <div class="nav container">
+      <div class="nav container hstack gap-3">
         <a href="index.html" class="logo"><span>E</span>Commerce</a>
+        <!-- ===== Sign up / Login Button ===== -->
+
+        <div class="center ms-auto">
+          <button id="show-login">Sign Up / Login</button>
+        </div>
+
         <!-- ===== Cart Icon ===== -->
         <i class="bx bx-shopping-bag" id="cart-icon"></i>
 
@@ -58,7 +70,7 @@
       <h2 class="section-title">Shop Products</h2>
 
       <!-- ===== Shop Search Filter ===== -->
-      <form>
+      <form class="search-form">
         <i class="bx bx-search"></i>
         <input
           type="text"
@@ -68,6 +80,100 @@
           onkeyup="search()"
         />
       </form>
+
+      <!-- ===== Sign up / Login Form ===== -->
+      <div class="main">
+        <i class="fa-solid fa-xmark text-white exit-btn"></i>
+        <input type="checkbox" id="check" />
+        <div class="signup">
+          <form>
+            <label for="check" class="signup-lbl d-flex justify-content-center"
+              >Sign Up</label
+            >
+            <!-- User Name Input -->
+            <div class="input-container d-flex justify-content-center mt-3">
+              <i class="fa-solid fa-user login-icon"></i>
+              <input
+                class="login-inp"
+                type="text"
+                name="text"
+                placeholder="User name"
+                required
+                maxlength="12"
+                minlength="4"
+                autofocus
+              />
+            </div>
+            <!-- Email Input -->
+            <div class="input-container d-flex justify-content-center mt-3">
+              <i class="fa-solid fa-envelope login-icon"></i>
+              <input
+                class="login-inp"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <!-- Password Input -->
+            <div class="input-container d-flex justify-content-center mt-3">
+              <i class="fa-solid fa-lock login-icon"></i>
+              <input
+                class="login-inp"
+                type="password"
+                name="password"
+                placeholder="Password"
+                maxlength="18"
+                minlength="6"
+                required
+              />
+            </div>
+            <div class="btn-container d-flex justify-content-center mt-3">
+              <i class="fa-solid fa-right-to-bracket login-icon"></i>
+              <button class="rounded login-btn">Sign up</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="login">
+          <form>
+            <label for="check" class="d-flex justify-content-center"
+              >Login</label
+            >
+            <!-- Email Input -->
+            <div class="input-container d-flex justify-content-center mt-3">
+              <i class="fa-solid fa-envelope login-icon"></i>
+              <input
+                class="login-inp"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <!-- Password Input -->
+            <div class="input-container d-flex justify-content-center mt-3">
+              <i class="fa-solid fa-lock login-icon"></i>
+              <i class="fa-solid fa-eye password-eye"></i>
+              <input
+                class="login-inp"
+                id="password"
+                type="password"
+                name="password"
+                placeholder="Password"
+                maxlength="18"
+                minlength="6"
+                required
+              />
+            </div>
+
+            <div class="btn-container d-flex justify-content-center mt-3">
+              <i class="fa-solid fa-right-to-bracket login-icon"></i>
+              <button class="rounded login-btn">Log in</button>
+            </div>
+          </form>
+        </div>
+      </div>
 
       <!-- Content -->
       <div class="shop-content" id="product-list">
@@ -161,7 +267,10 @@
     <footer>
       <div class="footer-container wrap">
         <div class="row p-0 m-0">
-          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+          <div
+            class="col-xl-3 col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center"
+          >
+            <!-- About Us -->
             <div class="footer-widget about-widget">
               <h2 class="widget-title">About Us</h2>
 
@@ -184,7 +293,10 @@
             </div>
           </div>
 
-          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+          <div
+            class="col-xl-3 col-lg-3 col-md-6 col-sm-6 d-flex justify-content-start"
+          >
+            <!-- Categories -->
             <div class="footer-widget categories-widget">
               <h2 class="widget-title">Categories</h2>
               <ul>
@@ -198,7 +310,10 @@
             </div>
           </div>
 
-          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+          <div
+            class="col-xl-3 col-lg-3 col-md-6 col-sm-6 d-flex justify-content-start"
+          >
+            <!-- Informations -->
             <div class="footer-widget information-widget">
               <h2 class="widget-title">Informations</h2>
               <ul>
@@ -212,13 +327,16 @@
             </div>
           </div>
 
-          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+          <div
+            class="col-xl-3 col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center"
+          >
+            <!-- Contact -->
             <div class="footer-widget contact-widget">
               <h2 class="widget-title">Contact</h2>
 
               <div class="contact-address">
-                <i class="bx bx-current-location"></i> Address : XYZ, Amsterdam,
-                Netherlands. Pin-Code : 123456
+                <i class="bx bx-current-location"></i>
+                <span>Address : Amsterdam, Netherlands. Pin-Code: 123</span>
               </div>
               <div class="contact-number">
                 <i class="bx bxs-phone"></i> Phone : +12 345678910
@@ -238,10 +356,12 @@
             </div>
           </div>
         </div>
+        <!-- Copyright -->
         <div class="copyright">
           <div class="copyright-container">
             <p>
-              Copyright <span><i class="bx bx-copyright"></i></span> <span id="copyright-date"></span> Mecoloji All Rights Reserved
+              Copyright <span><i class="bx bx-copyright"></i></span>
+              <span id="copyright-date"></span> Mecoloji All Rights Reserved
             </p>
           </div>
         </div>

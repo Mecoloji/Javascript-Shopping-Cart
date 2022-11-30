@@ -22,6 +22,7 @@
   --text-color: #171427;
   --bg-color: #fff;
   --dark-color: #000;
+  --hover-color: hsl(249, 30%, 30%);
 }
 ::selection {
   color: var(--text-color);
@@ -257,7 +258,7 @@ header {
 }
 
 .add-cart:hover {
-  background-color: hsl(249, 30%, 30%);
+  background: var(--hover-color);
 }
 /* ! ===== Shop Section End ===== */
 
@@ -301,7 +302,7 @@ header {
 /* ! ===== Responsive & Breakpoints End ===== */
 
 /* ! ===== Product Search Filter Start ===== */
-form {
+.search-form {
   padding-bottom: 12px;
   display: flex;
   flex-direction: row;
@@ -310,7 +311,7 @@ form {
   right: 10px;
 }
 
-form input {
+#search-item {
   border: 1px solid var(--text-color);
   border-radius: 15px;
   outline: none;
@@ -320,7 +321,7 @@ form input {
   padding: 8px 28px;
 }
 
-form i {
+.search-form i {
   position: relative;
   left: 25px;
   font-size: 18px;
@@ -398,7 +399,6 @@ footer {
   padding-bottom: 20px;
   border-bottom: 1px solid var(--sec-color);
   line-height: 20px;
-  width: 75%;
 }
 
 .contact-number,
@@ -434,6 +434,161 @@ footer {
 }
 
 /* ! ===== Footer End ===== */
+
+/* ! ===== Sign Up / Login Start ===== */
+#show-login {
+  padding: 4px 8px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  transition: 0.2s ease-in;
+  background: var(--sec-color);
+  color: var(--bg-color);
+  margin-right: 1.2em;
+}
+
+#show-login:hover {
+  background: var(--hover-color);
+  color: var(--bg-color);
+}
+
+.main {
+  width: 350px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px var(--dark-color);
+  opacity: 0;
+  transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms;
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background: var(--main-color);
+  z-index: 1;
+}
+
+#check {
+  display: none;
+}
+
+.signup {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.signup-lbl {
+  margin-bottom: 10px;
+}
+
+label {
+  color: var(--bg-color);
+  font-size: 2.3em;
+  justify-content: center;
+  display: flex;
+  margin: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.login-inp {
+  width: 60%;
+  height: 40px;
+  background: var(--bg-color);
+  justify-content: center;
+  display: flex;
+  margin: 4px auto;
+  padding: 10px 40px 10px 35px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.login-btn {
+  width: 60%;
+  height: 40px;
+  margin: 6px auto;
+  justify-content: center;
+  display: block;
+  color: var(--bg-color);
+  background: var(--sec-color);
+  font-size: 1em;
+  font-weight: 600;
+  /* margin-top: 12px; */
+  border: none;
+  outline: none;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: var(--sec-color);
+}
+
+.login {
+  height: 460px;
+  background: #eff5f5;
+  border-radius: 60% / 10%;
+  transform: translateY(-180px);
+  transition: 0.9s ease-in-out;
+}
+
+.login label {
+  color: var(--sec-color);
+  transform: scale(0.6);
+  padding-top: 0.5em;
+  margin-bottom: 0.7em;
+}
+
+#check:checked ~ .login {
+  transform: translateY(-500px);
+}
+
+#check:checked ~ .login label {
+  transform: scale(1);
+}
+
+#check:checked ~ .signup label {
+  transform: scale(0.6);
+}
+
+.login-icon {
+  position: relative;
+  top: 1em;
+  left: 5.5em;
+}
+
+.password-eye {
+  position: absolute;
+  top: 11.3em;
+  left: 16em;
+  cursor: pointer;
+}
+
+.password-eye i .hide-btn:before {
+  content: "\f070";
+}
+
+.exit-btn {
+  position: relative;
+  left: 20em;
+  top: 1em;
+  cursor: pointer;
+}
+/* ! ===== Sign Up / Login End ===== */
+
+/* ! ===== Popup Style Start ===== */
+.main.active {
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms;
+}
+/* ! ===== Popup Style End ===== */
 
 /* ! ===== Cart Badge Counter Start ===== */
 /* .badge {
